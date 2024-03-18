@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liverpool FC</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+   
+
+</head>
+<body>
+
+    <!-- Reproductor de música -->
+    <audio id="music-player" controls loop onended="hideMusicPlayer()">
+        <source src="musique/liverpool.mp3" type="audio/mpeg">
+        
+    </audio>
+
+    <!-- Icono para iniciar la música -->
+    <span id="music-icon" class="play-music-icon" onclick="toggleMusic()">
+        <i class="fas fa-play"></i>
+    </span>
+
+    <!-- Título y descripción del club Liverpool FC en el medio del encabezado -->
+    <div class="club-info">
+        <h1>------Liverpool FC(made by youssef)-----------</h1>
+        <p>Liverpool Football Club is a professional football club based in Liverpool, England. Founded in 1892, Liverpool FC has won numerous domestic and international trophies, including 19 League titles, 6 European Cups, and 7 FA Cups. The club's iconic anthem is "You'll Never Walk Alone".</p>
+    </div>
+
+    <!-- Contenido principal -->
+    <div class="container">
+        <div class="box">
+            <img src="img/liverpool-logo.png" alt="Liverpool FC" class="liverpool-logo">
+            <h3>Current Squad</h3>
+            <p>Get to know the players who make up the current Liverpool FC squad.</p>
+            <a href="https://www.liverpoolfc.com/team/first-team" target="_blank">View Squad</a>
+        </div>
+        <div class="box">
+            <img src="img/liverpool-logo.png" alt="Liverpool FC" class="liverpool-logo">
+            <h3>Club History</h3>
+            <p>Discover the history and achievements of Liverpool FC over the years.</p>
+            <a href="https://www.liverpoolfc.com/kopkids/history" target="_blank">View History</a>
+        </div>
+        <div class="box">
+            <img src="img/liverpool-logo.png" alt="Liverpool FC" class="liverpool-logo">
+            <h3>Titles Won</h3>
+            <p>Check out the titles won by Liverpool FC throughout its history.</p>
+            <a href="https://www.liverpoolfc.com/history/honours" target="_blank">View Titles</a>
+        </div>
+        
+        <div class="box">
+            <div class="video-container">
+            <iframe id="video-player" width="560" height="315" src="https://www.youtube.com/embed/1gf5RjtwjkA" frameborder="0" allowfullscreen></iframe>
+       
+        </div>
+    </div>
+
+    <!-- Script para mostrar/ocultar el reproductor de música -->
+    <script>
+        function toggleMusic() {
+            var audioPlayer = document.getElementById('music-player');
+            var musicIcon = document.getElementById('music-icon');
+            if (audioPlayer.paused) {
+                audioPlayer.play();
+                musicIcon.innerHTML = '<i class="fas fa-pause"></i>';
+            } else {
+                audioPlayer.pause();
+                musicIcon.innerHTML = '<i class="fas fa-play"></i>';
+            }
+        }
+
+        function hideMusicPlayer() {
+            var audioPlayer = document.getElementById('music-player');
+            var musicIcon = document.getElementById('music-icon');
+            audioPlayer.style.display = 'none';
+            musicIcon.style.display = 'none';
+        }
+    </script>
+ <footer>
+
+        <a href="http://www.w3.org/WAI/WCAG1AAA-Conformance"
+      title="Explanation of Level Triple-A Conformance">
+  <img height="32" width="88" 
+          src="http://www.w3.org/WAI/wcag1AAA"
+          alt="Level Triple-A conformance icon, 
+          W3C-WAI Web Content Accessibility Guidelines 1.0"></a>
+
+    </footer>
+</body>
+</html>
